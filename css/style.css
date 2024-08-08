@@ -11660,6 +11660,13 @@
 	background-repeat:no-repeat;
 }
 
+
+@media (min-width: 745px) {
+	.main-slider-five .size{
+		max-width: 350px;
+	}
+}
+
 .main-slider-five .content-boxed{
 	position:relative;
 	z-index:1;
