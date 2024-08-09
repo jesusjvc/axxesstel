@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script>
+        L_NO_TOUCH = false;
+        L_DISABLE_3D = false;
+    </script>
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <style>
+        #map_a8c9addb376d6178d7505a83ea877694 {
+            position: relative;
+            width: 100.0%;
+            height: 100.0%;
+            left: 0.0%;
+            top: 0.0%;
+        }
+    </style>
+    <style>
+        .leaflet-image-layer {
+            /* old android/safari*/
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges; /* safari */
+            image-rendering: pixelated; /* chrome */
+            image-rendering: -moz-crisp-edges; /* firefox */
+            image-rendering: -o-crisp-edges; /* opera */
+            -ms-interpolation-mode: nearest-neighbor; /* ie */
+        }
+    </style>
+</head>
+<body>
+    <div class="folium-map" id="map_a8c9addb376d6178d7505a83ea877694" ></div>
+</body>
+<script>
+    var map_a8c9addb376d6178d7505a83ea877694 = L.map(
+        "map_a8c9addb376d6178d7505a83ea877694",
+        {
+            center: [22.668386396876077, -100.23946653493142],
+            crs: L.CRS.EPSG3857,
+            zoom: 9.200000000000001,
+            zoomControl: true,
+            preferCanvas: false,
+        }
+    );
+
+    var tile_layer_a3dd50a16e299f7fc6b0a30cd862a2c6 = L.tileLayer(
+        "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+        {"attribution": "Data by © OpenStreetMap, under ODbL.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+    ).addTo(map_a8c9addb376d6178d7505a83ea877694);
+
+    var markers = [
+        [22.79122525965703, -100.1695116037006, "Negritas"],
+        [22.65798633444714, -100.11105082106, "Hincada"],
+        [22.59818031322688, -100.145675088, "Buenavista"],
+        [22.55596812757014, -100.2015295136504, "Quelital"],
+        [22.57051541115442, -100.2261763405193, "Agricola"],
+        [22.52604479102734, -100.242947314966, "Zaus"],
+        [22.44108608388476, -100.2966562329104, "Cerritos"],
+        [22.29451911241355, -100.7698065637311, "Palomas"],
+        [22.2718063362088, -100.8649214111624, "Candido Navarro"],
+        [22.79357199473619, -99.94220157536637, "Magdaleno Cedillo"],
+        [22.86251624756057, -100.1524995392065, "Presa de Guadalupe"],
+        [22.86734140584772, -100.173311848237, "Rancho Nuevo"],
+        [22.97358127507143, -100.0581947512494, "Lazaro Cardenas"],
+        [23.01055348456472, -100.2665481663008, "Ventana"],
+        [22.86859477264073, -100.2881040351504, "Santo Domingo"],
+        [22.8306979968819, -100.3326163886237, "Amoles"],
+        [22.4483798, -100.6791799, "Villa Hidalgo 'Próximamente'"]
+    ];
+
+    markers.forEach(function(marker) {
+        var m = L.marker([marker[0], marker[1]]).addTo(map_a8c9addb376d6178d7505a83ea877694);
+        m.bindPopup(marker[2]);
+
+        m.on('click', function() {
+            var originalView = map_a8c9addb376d6178d7505a83ea877694.getCenter();
+            var originalZoom = map_a8c9addb376d6178d7505a83ea877694.getZoom();
+
+            map_a8c9addb376d6178d7505a83ea877694.flyTo(m.getLatLng(), 14, { duration: 2 });
+
+            setTimeout(function() {
+                map_a8c9addb376d6178d7505a83ea877694.flyTo(originalView, originalZoom, { duration: 2 });
+            }, 15000);  // Changed duration to 15 seconds
+        });
+    });
+</script>
+</html>
