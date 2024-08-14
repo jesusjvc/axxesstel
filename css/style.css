@@ -112,6 +112,10 @@
 	margin-bottom:var(--margin-bottom-20);
 }
 
+.main-cobertura{
+	padding-top: 155px;
+}
+
 .main-slider .active .title{
 	opacity: 1;
 	transform: translateX(0px);
@@ -2975,7 +2979,10 @@
 	overflow:hidden;
 	padding:140px 0px;
 	background-size:cover;
+	top:150px;
+	height: 700px;
 }
+
 
 .page-title:before{
 	position:absolute;
