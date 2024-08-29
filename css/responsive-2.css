@@ -153,6 +153,7 @@
 	.order-section .content-column{
 		order:1;
 		margin-bottom:var(--margin-bottom-40);
+		margin-top: 60px;
 	}
 	
 	.order-section .image-column{
@@ -212,7 +213,7 @@
 	}
 	
 	.main-slider-five h1{
-		font-size: 110px;
+		font-size: 250px;
 	}
 	
 	.tv-section .content-column .content,
@@ -244,7 +245,8 @@
 	}
 	
 	.speedtest-section h3 {
-		font-size: var(--font-22);
+		font-size: 2rem;
+		color: #fff;
 	}
 	
 	.news-block-seven .lower-content{
