@@ -11689,6 +11689,7 @@
 
 .main-slider-five .title{
 	position:relative;
+	line-height: 2.7rem;
 	opacity: 0;
 	font-weight:700;
 	font-size:var(--font-36);
@@ -11986,6 +11987,11 @@
 	position:relative;
 	padding-left:var(--padding-left-30);
 	padding-right:var(--padding-right-25);
+	min-height: 568px;
+}
+
+.price-block-six .info{
+	min-height: 180px;
 }
 
 .price-block-six .price-list{
